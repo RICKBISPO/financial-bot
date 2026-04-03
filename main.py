@@ -1,7 +1,7 @@
 import os
 from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, filters
 
-from database import init_db
+from database import init_database
 from bot import (
     start, help_cmd, balance_cmd, status_cmd, expenses,
     fixed_cmd, removefixed_cmd, installments_cmd, removep_cmd,
@@ -15,7 +15,7 @@ def main():
     if not TOKEN:
         raise ValueError("BOT_TOKEN not set in environment variables")
 
-    init_db()
+    init_database()
 
     app = ApplicationBuilder().token(TOKEN).build()
 
