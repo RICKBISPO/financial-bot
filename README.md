@@ -1,25 +1,47 @@
-# 💰 Financial Bot
+# Financial Bot 🤖
 
-A Telegram bot for personal finance management.
+Bot de Telegram para gerenciar finanças pessoais.
 
-## Features
+## Instalação
 
-- Track daily expenses via chat
-- Credit card system (closing & due dates)
-- Recurring (fixed) expenses
-- Installments tracking
-- Smart reminders with custom messages
-- Monthly summaries
-- Simple and fast UX
+1. **Instalar dependências:**
+```bash
+pip install -r requirements.txt
+```
 
-## Example usage
+2. **Configurar token:**
+```bash
+export BOT_TOKEN="seu_token_aqui"
+```
 
--30 lunch  
-50 market  
-120 ifood c  
+## Uso
 
-## Tech
+```bash
+python main.py
+```
 
-- Python
-- SQLite
-- Telegram Bot API
+## Comandos
+
+- `/saldo` - Mostrar saldo
+- `/status` - Status financeiro
+- `/gastos` - Últimas transações
+- `/fixos` - Gastos fixos
+- `/parcelados` - Parcelamentos
+- `/fatura` - Fatura do cartão
+- `/ajuda` - Ajuda
+
+## Transações
+
+- `-50 lanche` - Gasto (débito)
+- `+2000 salário` - Renda (entrada)
+- `100 ifood c` - Cartão de crédito
+
+## Estrutura
+
+```
+database/          # Modelos, repositórios, conexão
+services/          # Lógica de negócio
+bot.py            # Handlers do Telegram
+main.py           # Entrada da aplicação
+messages.py       # Mensagens do usuário
+```
